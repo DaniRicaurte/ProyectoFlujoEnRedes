@@ -3,6 +3,177 @@
 Minimize
  
 Subject To
- demanda_potencia_activa__1: P[2,1] + P[10,1] = -122900
+ demanda_potencia_activa__1: - P[1,2] - P[1,10] + P[2,1] + P[10,1]
+   - 0.04 Isqrt[1,2] - 0.09 Isqrt[1,10] = -122900
+ demanda_potencia_activa__2: P[1,2] - P[2,1] - P[2,4] + P[4,2]
+   - 0.04 Isqrt[2,1] - 0.08 Isqrt[2,4] = -124000
+ demanda_potencia_activa__3: - P[3,4] - P[3,7] + P[4,3] + P[7,3]
+   - 0.09 Isqrt[3,4] - 0.04 Isqrt[3,7] = -124000
+ demanda_potencia_activa__4: P[2,4] + P[3,4] - P[4,2] - P[4,3] - P[4,14]
+   + P[14,4] - 0.08 Isqrt[4,2] - 0.09 Isqrt[4,3] - 0.11 Isqrt[4,14]
+   = -124000
+ demanda_potencia_activa__5: - P[5,8] + P[8,5] - 0.08 Isqrt[5,8] = -120500
+ demanda_potencia_activa__6: - P[6,8] - P[6,12] + P[8,6] + P[12,6]
+   - 0.11 Isqrt[6,8] - 0.04 Isqrt[6,12] = -124400
+ demanda_potencia_activa__7: P[3,7] - P[7,3] - P[7,9] + P[9,7]
+   - 0.04 Isqrt[7,3] - 0.11 Isqrt[7,9] = -124000
+ demanda_potencia_activa__8: P[5,8] + P[6,8] - P[8,5] - P[8,6] - P[8,9]
+   + P[9,8] - 0.08 Isqrt[8,5] - 0.11 Isqrt[8,6] - 0.08 Isqrt[8,9]
+   = -120000
+ demanda_potencia_activa__9: P[7,9] + P[8,9] - P[9,7] - P[9,8] - P[9,14]
+   + P[14,9] - 0.11 Isqrt[9,7] - 0.08 Isqrt[9,8] - 0.11 Isqrt[9,14]
+   = -121000
+ demanda_potencia_activa__10: P[1,10] - P[10,1] - P[10,11] + P[11,10]
+   - 0.09 Isqrt[10,1] - 0.04 Isqrt[10,11] = -123500
+ demanda_potencia_activa__11: P[10,11] - P[11,10] - P[11,13] + P[13,11]
+   - 0.04 Isqrt[11,10] - 0.09 Isqrt[11,13] = -123000
+ demanda_potencia_activa__12: P[6,12] - P[12,6] - P[12,13] + P[13,12]
+   - 0.04 Isqrt[12,6] - 0.08 Isqrt[12,13] = -122000
+ demanda_potencia_activa__13: P[11,13] + P[12,13] - P[13,11] - P[13,12]
+   - P[13,14] + P[14,13] - 0.09 Isqrt[13,11] - 0.08 Isqrt[13,12]
+   - 0.075 Isqrt[13,14] = -123000
+ demanda_potencia_activa__14: P[4,14] + P[9,14] + P[13,14] - P[14,4]
+   - P[14,9] - P[14,13] - 0.11 Isqrt[14,4] - 0.11 Isqrt[14,9]
+   - 0.075 Isqrt[14,13] = -125000
+ demanda_potencia_reactiva__1: - Q[1,2] - Q[1,10] + Q[2,1] + Q[10,1]
+   - 0.04 Isqrt[1,2] - 0.12 Isqrt[1,10] = -124000
+ demanda_potencia_reactiva__2: Q[1,2] - Q[2,1] - Q[2,4] + Q[4,2]
+   - 0.04 Isqrt[2,1] - 0.11 Isqrt[2,4] = -124100
+ demanda_potencia_reactiva__3: - Q[3,4] - Q[3,7] + Q[4,3] + Q[7,3]
+   - 0.12 Isqrt[3,4] - 0.04 Isqrt[3,7] = -124300
+ demanda_potencia_reactiva__4: Q[2,4] + Q[3,4] - Q[4,2] - Q[4,3] - Q[4,14]
+   + Q[14,4] - 0.11 Isqrt[4,2] - 0.12 Isqrt[4,3] - 0.11 Isqrt[4,14]
+   = -124100
+ demanda_potencia_reactiva__5: - Q[5,8] + Q[8,5] - 0.11 Isqrt[5,8]
+   = -123000
+ demanda_potencia_reactiva__6: - Q[6,8] - Q[6,12] + Q[8,6] + Q[12,6]
+   - 0.11 Isqrt[6,8] - 0.04 Isqrt[6,12] = -124900
+ demanda_potencia_reactiva__7: Q[3,7] - Q[7,3] - Q[7,9] + Q[9,7]
+   - 0.04 Isqrt[7,3] - 0.11 Isqrt[7,9] = -124100
+ demanda_potencia_reactiva__8: Q[5,8] + Q[6,8] - Q[8,5] - Q[8,6] - Q[8,9]
+   + Q[9,8] - 0.11 Isqrt[8,5] - 0.11 Isqrt[8,6] - 0.11 Isqrt[8,9]
+   = -122000
+ demanda_potencia_reactiva__9: Q[7,9] + Q[8,9] - Q[9,7] - Q[9,8] - Q[9,14]
+   + Q[14,9] - 0.11 Isqrt[9,7] - 0.11 Isqrt[9,8] - 0.11 Isqrt[9,14]
+   = -122300
+ demanda_potencia_reactiva__10: Q[1,10] - Q[10,1] - Q[10,11] + Q[11,10]
+   - 0.12 Isqrt[10,1] - 0.04 Isqrt[10,11] = -123800
+ demanda_potencia_reactiva__11: Q[10,11] - Q[11,10] - Q[11,13] + Q[13,11]
+   - 0.04 Isqrt[11,10] - 0.18 Isqrt[11,13] = -124200
+ demanda_potencia_reactiva__12: Q[6,12] - Q[12,6] - Q[12,13] + Q[13,12]
+   - 0.04 Isqrt[12,6] - 0.11 Isqrt[12,13] = -123500
+ demanda_potencia_reactiva__13: Q[11,13] + Q[12,13] - Q[13,11] - Q[13,12]
+   - Q[13,14] + Q[14,13] - 0.18 Isqrt[13,11] - 0.11 Isqrt[13,12]
+   - 0.1 Isqrt[13,14] = -123400
+ demanda_potencia_reactiva__14: Q[4,14] + Q[9,14] + Q[13,14] - Q[14,4]
+   - Q[14,9] - Q[14,13] - 0.11 Isqrt[14,4] - 0.11 Isqrt[14,9]
+   - 0.1 Isqrt[14,13] = -125000
+ limite_de_magnitud_de_tensión: - 0.15 P[14,13] - 0.2 Q[14,13]
+   + 0.015625 Isqrt[14,13] - Vsqrt[13] + Vsqrt[14] - deltaV[14,13] = 0
+ limite_de_magnitud_de_tensión: - 0.15 P[13,14] - 0.2 Q[13,14]
+   + 0.015625 Isqrt[13,14] + Vsqrt[13] - Vsqrt[14] - deltaV[13,14] = 0
+ limite_de_magnitud_de_tensión: - 0.16 P[13,12] - 0.22 Q[13,12]
+   + 0.0185 Isqrt[13,12] - Vsqrt[12] + Vsqrt[13] - deltaV[13,12] = 0
+ limite_de_magnitud_de_tensión: - 0.16 P[12,13] - 0.22 Q[12,13]
+   + 0.0185 Isqrt[12,13] + Vsqrt[12] - Vsqrt[13] - deltaV[12,13] = 0
+ limite_de_magnitud_de_tensión: - 0.18 P[13,11] - 0.36 Q[13,11]
+   + 0.0405 Isqrt[13,11] - Vsqrt[11] + Vsqrt[13] - deltaV[13,11] = 0
+ limite_de_magnitud_de_tensión: - 0.18 P[11,13] - 0.36 Q[11,13]
+   + 0.0405 Isqrt[11,13] + Vsqrt[11] - Vsqrt[13] - deltaV[11,13] = 0
+ limite_de_magnitud_de_tensión: - 0.22 P[14,9] - 0.22 Q[14,9]
+   + 0.0242 Isqrt[14,9] - Vsqrt[9] + Vsqrt[14] - deltaV[14,9] = 0
+ limite_de_magnitud_de_tensión: - 0.22 P[9,14] - 0.22 Q[9,14]
+   + 0.0242 Isqrt[9,14] + Vsqrt[9] - Vsqrt[14] - deltaV[9,14] = 0
+ limite_de_magnitud_de_tensión: - 0.16 P[8,9] - 0.22 Q[8,9]
+   + 0.0185 Isqrt[8,9] + Vsqrt[8] - Vsqrt[9] - deltaV[8,9] = 0
+ limite_de_magnitud_de_tensión: - 0.22 P[7,9] - 0.22 Q[7,9]
+   + 0.0242 Isqrt[7,9] + Vsqrt[7] - Vsqrt[9] - deltaV[7,9] = 0
+ limite_de_magnitud_de_tensión: - 0.22 P[8,6] - 0.22 Q[8,6]
+   + 0.0242 Isqrt[8,6] - Vsqrt[6] + Vsqrt[8] - deltaV[8,6] = 0
+ limite_de_magnitud_de_tensión: - 0.22 P[6,8] - 0.22 Q[6,8]
+   + 0.0242 Isqrt[6,8] + Vsqrt[6] - Vsqrt[8] - deltaV[6,8] = 0
+ limite_de_magnitud_de_tensión: - 0.16 P[8,5] - 0.22 Q[8,5]
+   + 0.0185 Isqrt[8,5] - Vsqrt[5] + Vsqrt[8] - deltaV[8,5] = 0
+ limite_de_magnitud_de_tensión: - 0.16 P[5,8] - 0.22 Q[5,8]
+   + 0.0185 Isqrt[5,8] + Vsqrt[5] - Vsqrt[8] - deltaV[5,8] = 0
+ limite_de_magnitud_de_tensión: - 0.18 P[4,3] - 0.24 Q[4,3]
+   + 0.0225 Isqrt[4,3] - Vsqrt[3] + Vsqrt[4] - deltaV[4,3] = 0
+ limite_de_magnitud_de_tensión: - 0.18 P[3,4] - 0.24 Q[3,4]
+   + 0.0225 Isqrt[3,4] + Vsqrt[3] - Vsqrt[4] - deltaV[3,4] = 0
+ limite_de_magnitud_de_tensión: - 0.16 P[2,4] - 0.22 Q[2,4]
+   + 0.0185 Isqrt[2,4] + Vsqrt[2] - Vsqrt[4] - deltaV[2,4] = 0
+ limite_de_magnitud_de_tensión: - 0.08 P[7,3] - 0.08 Q[7,3]
+   + 0.0032 Isqrt[7,3] - Vsqrt[3] + Vsqrt[7] - deltaV[7,3] = 0
+ limite_de_magnitud_de_tensión: - 0.08 P[3,7] - 0.08 Q[3,7]
+   + 0.0032 Isqrt[3,7] + Vsqrt[3] - Vsqrt[7] - deltaV[3,7] = 0
+ regular_la_magnitud_maxima_de_tensión_entre_los_nodos_del_sistema_con_respecto a las llaves:
+   0.1 y[8,6] + deltaV[8,6] <= 0.1
+ _Conservación_maxima_de_potencia_2: Vsqrt[2] <= 583.2225000000001
+ _Conservación_maxima_de_potencia_6: Vsqrt[6] <= 583.2225000000001
 Bounds
+ P[1,2] free
+ P[1,10] free
+ P[2,1] free
+ P[2,4] free
+ P[3,4] free
+ P[4,14] free
+ P[5,8] free
+ P[6,8] free
+ P[6,12] free
+ P[7,9] free
+ P[8,6] free
+ P[8,9] free
+ P[10,1] free
+ P[10,11] free
+ P[11,10] free
+ P[12,6] free
+ P[13,11] free
+ P[13,12] free
+ P[13,14] free
+ P[14,4] free
+ P[14,9] free
+ Q[1,2] free
+ Q[1,10] free
+ Q[2,1] free
+ Q[2,4] free
+ Q[3,4] free
+ Q[3,7] free
+ Q[4,14] free
+ Q[5,8] free
+ Q[6,8] free
+ Q[6,12] free
+ Q[7,9] free
+ Q[8,6] free
+ Q[9,8] free
+ Q[10,1] free
+ Q[10,11] free
+ Q[11,10] free
+ Q[12,6] free
+ Q[13,12] free
+ Q[13,14] free
+ Q[14,4] free
+ Q[14,9] free
+ Isqrt[1,2] free
+ Isqrt[2,1] free
+ Isqrt[3,7] free
+ Isqrt[5,8] free
+ Isqrt[6,8] free
+ Isqrt[7,9] free
+ Isqrt[10,11] free
+ Isqrt[11,10] free
+ Isqrt[13,14] free
+ Vsqrt[2] free
+ Vsqrt[3] free
+ Vsqrt[4] free
+ Vsqrt[5] free
+ Vsqrt[6] free
+ Vsqrt[7] free
+ Vsqrt[8] free
+ Vsqrt[9] free
+ Vsqrt[11] free
+ Vsqrt[12] free
+ Vsqrt[13] free
+ deltaV[8,6] free
+Binaries
+ y[8,6]
 End
