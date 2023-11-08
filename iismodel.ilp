@@ -1,0 +1,8 @@
+\ Model RSD_copy
+\ LP format - for model browsing. Use MPS format to capture full model detail.
+Minimize
+ 
+Subject To
+ demanda_potencia_activa__1: P[2,1] + P[10,1] = -122900
+Bounds
+End
