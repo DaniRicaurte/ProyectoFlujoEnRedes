@@ -445,12 +445,13 @@ def getFile():
     return splitted[0]
 
 
+value=getFile()
 if m.Status == GRB.INFEASIBLE:
     m.computeIIS()
-    m.write('{{getFile()}}.ilp')
+    m.write('{value}.ilp')
 else:
-    m.write('{{getFile()}}.lp')
-    m.write('{{getFile()}}.sol')
+    m.write('{value}.lp')
+    m.write('{value}.sol')
 
 def printGrafo():
     # Crear un grafo dirigido
